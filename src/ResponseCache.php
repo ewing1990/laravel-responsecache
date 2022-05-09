@@ -66,7 +66,7 @@ class ResponseCache
             : false;
     }
 
-    public function getCachedResponseFor(Request $request, array $tags = []): Response
+    public function getCachedResponseFor(Request $request, array $tags = []): ?Response
     {
         return $this->taggedCache($tags)->get($this->hasher->getHashFor($request));
     }
